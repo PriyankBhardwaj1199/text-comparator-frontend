@@ -1,0 +1,17 @@
+textarea {
+  resize: none;
+}
+
+.differences span {
+  padding: 2px;
+}
+
+.differences .added {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.differences .removed {
+  background-color: #f8d7da;
+  color: #721c24;
+}

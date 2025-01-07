@@ -1,0 +1,37 @@
+<div class="container mt-5">
+    <h2>Text Comparator</h2>
+    <form [formGroup]="textForm" (ngSubmit)="compareTexts()">
+      <div class="form-group">
+        <label for="text1">Text 1</label>
+        <textarea
+          id="text1"
+          class="form-control"
+          formControlName="text1"
+          rows="4"
+          placeholder="Enter the first text"
+        ></textarea>
+      </div>
+      <div class="form-group mt-3">
+        <label for="text2">Text 2</label>
+        <textarea
+          id="text2"
+          class="form-control"
+          formControlName="text2"
+          rows="4"
+          placeholder="Enter the second text"
+        ></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary mt-3" [disabled]="!textForm.valid">Compare</button>
+    </form>
+  
+    <div *ngIf="comparisonResult" class="mt-5">
+      <h3>Comparison Results</h3>
+      <p><strong>Levenshtein Distance:</strong> {{ comparisonResult.levenshteinDistance }}</p>
+      <p><strong>Jaccard Similarity:</strong> {{ comparisonResult.jaccardSimilarity | number:'1.2-2' }}</p>
+      <h4>Differences</h4>
+      <div class="differences">
+        <span *ngFor="let char of parsedDifferences" [ngClass]="char.type">{{ char.value }}</span>
+      </div>
+    </div>
+  </div>
+  
