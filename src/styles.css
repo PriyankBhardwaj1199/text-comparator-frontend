@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+::ng-deep .differences .added {
+    background-color: #d4edda; /* Light green */
+    color: #155724;
+  }
+  
+  ::ng-deep .differences .removed {
+    background-color: #f8d7da; /* Light red */
+    color: #721c24;
+    text-decoration: line-through;
+  }

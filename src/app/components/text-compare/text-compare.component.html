@@ -1,37 +1,79 @@
-<div class="container mt-5">
-    <h2>Text Comparator</h2>
-    <form [formGroup]="textForm" (ngSubmit)="compareTexts()">
-      <div class="form-group">
-        <label for="text1">Text 1</label>
+<app-layout></app-layout>
+<div *ngIf="!compareResult" class="container mt-5">
+  
+  <form [formGroup]="textForm" (ngSubmit)="compareTexts()">
+    <div class="row g-4">
+      <div class="form-group col-md-6">
+        <label for="text1-highlighted" class="form-label">Text 1</label>
         <textarea
-          id="text1"
+          id="text1-highlighted"
           class="form-control"
+          [innerHTML]="highlightedText1"
+          contenteditable="true"
           formControlName="text1"
-          rows="4"
+          rows="15"
           placeholder="Enter the first text"
         ></textarea>
       </div>
-      <div class="form-group mt-3">
-        <label for="text2">Text 2</label>
+      <div class="form-group col-md-6">
+        <label for="text2-highlighted" class="form-label">Text 2</label>
         <textarea
-          id="text2"
+          id="text2-highlighted"
           class="form-control"
           formControlName="text2"
-          rows="4"
+          [innerHTML]="highlightedText2"
+          contenteditable="true"
+          rows="15"
           placeholder="Enter the second text"
         ></textarea>
       </div>
-      <button type="submit" class="btn btn-primary mt-3" [disabled]="!textForm.valid">Compare</button>
-    </form>
-  
-    <div *ngIf="comparisonResult" class="mt-5">
-      <h3>Comparison Results</h3>
-      <p><strong>Levenshtein Distance:</strong> {{ comparisonResult.levenshteinDistance }}</p>
-      <p><strong>Jaccard Similarity:</strong> {{ comparisonResult.jaccardSimilarity | number:'1.2-2' }}</p>
-      <h4>Differences</h4>
-      <div class="differences">
-        <span *ngFor="let char of parsedDifferences" [ngClass]="char.type">{{ char.value }}</span>
-      </div>
+    </div>
+    <div class="text-center">
+      <button
+        type="submit"
+        class="btn btn-success mt-3 text-center"
+        [disabled]="!textForm.valid"
+      >
+        Compare
+      </button>
+    </div>
+  </form>
+</div>
+
+<div *ngIf="compareResult" class="container mt-5">
+  <div class="text-center mb-4">
+    <h4>Comparison Result</h4>
+  </div>
+  <p>
+    <strong>Levenshtein Distance:</strong>
+    {{ comparisonResult.levenshteinDistance }}
+  </p>
+  <p>
+    <strong>Jaccard Similarity:</strong>
+    {{ comparisonResult.jaccardSimilarity | number : "1.2-2" }}
+  </p>
+  <h4>Differences</h4>
+
+  <div class="row g-4">
+    <div class="col-md-6">
+      <div
+        id="text1-highlighted"
+        class="form-control highlighted-text col-md-6"
+        [innerHTML]="highlightedText1"
+      ></div>
+    </div>
+    <div class="col-md-6">
+      <div
+        id="text2-highlighted"
+        class="form-control highlighted-text col-md-6"
+        [innerHTML]="highlightedText2"
+      ></div>
     </div>
   </div>
-  
+
+  <div class="text-center mt-3">
+    <button class="btn btn-primary" (click)="toggleCompareResult()">
+      Compare again
+    </button>
+  </div>
+</div>

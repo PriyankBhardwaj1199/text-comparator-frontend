@@ -6,12 +6,18 @@ textarea {
   padding: 2px;
 }
 
-.differences .added {
-  background-color: #d4edda;
+::ng-deep .highlighted-text .added {
+  background-color: #d4edda; /* Light green */
   color: #155724;
 }
 
-.differences .removed {
-  background-color: #f8d7da;
+::ng-deep .highlighted-text .removed {
+  background-color: #f8d7da; /* Light red */
   color: #721c24;
+  text-decoration: line-through;
+}
+
+.highlighted-text {
+  border: 1px solid #000;
+  padding: 10px;
 }
