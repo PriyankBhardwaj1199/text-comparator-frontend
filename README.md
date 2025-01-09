@@ -1,27 +1,65 @@
-# TextCompare
+# Text Comparison Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.7.
+A simple and intuitive web-based application for comparing texts. This project uses the **Longest Common Subsequence (LCS) Algorithm** for text comparison and provides a user-friendly interface built with Angular 18 and Bootstrap. The backend is powered by Spring Boot.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+- **Text Comparison**: Identify similarities and differences between two text inputs.
+- **LCS Algorithm**: Efficiently compares texts using the Longest Common Subsequence algorithm.
+- **Modern UI**: Built with Angular 18 and styled with Bootstrap for a clean and responsive interface.
+- **Fast and Scalable**: Backend developed in Spring Boot ensures smooth and scalable performance.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## Technologies Used
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Frontend:
+- **Angular 18**
+- **Bootstrap**
 
-## Running unit tests
+### Backend:
+- **Spring Boot**
+- **Java**
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Algorithm:
+- **Longest Common Subsequence (LCS)**
 
-## Running end-to-end tests
+---
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Screenshots
 
-## Further help
+![image](https://github.com/user-attachments/assets/5b6d1fed-3ff7-400a-8c9f-245ba54f298b)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+![image](https://github.com/user-attachments/assets/b32e380e-722d-459e-97ff-dc67b6e0ebe6)
+
+---
+
+## Contributing
+
+1. Fork the repository.
+2. Create a new branch for your feature: `git checkout -b feature-name`.
+3. Commit your changes: `git commit -m 'Add some feature'`.
+4. Push the branch: `git push origin feature-name`.
+5. Open a pull request.
+
+---
+
+## Contact
+
+For any questions or feedback:
+
+- **Email**: priyankbhardwaj1199@gmail.com
+
+---
+
+## Acknowledgments
+
+- [Apache Commons Text](https://commons.apache.org/proper/commons-text/) for advanced text comparison utilities.
+- [Angular](https://angular.io/) and [Bootstrap](https://getbootstrap.com/) for the frontend framework and design.
+- [Spring Boot](https://spring.io/projects/spring-boot) for backend development.
+
+---
+
+
